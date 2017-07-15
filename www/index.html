@@ -46,7 +46,7 @@
 </head>
 
 <body>
-    <div class="app">
+
 		<div class="container">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
@@ -61,19 +61,41 @@
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" id="sign">Sign in</button>
             </form><!-- /form -->
             <a href="#" class="forgot-password">
                 Forgot the password?
             </a>
-        </div><!-- /card-container -->
+        </div><!-- /card-container --> 
 		</div><!-- /container -->
-    </div>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
     </script>
+	<script>
+		$(document).ready(function() {
+			// DOM ready
+
+			// Test data
+			/*
+			 * To test the script you should discomment the function
+			 * testLocalStorageData and refresh the page. The function
+			 * will load some test data and the loadProfile
+			 * will do the changes in the UI
+			 */
+			// testLocalStorageData();
+			// Load profile if it exits
+			alert("Ready");
+			loadProfile();
+			$("#sign").click(function(event){
+				event.preventDefault();
+				alert("login");
+				$(location).attr("href","home.html")
+			});
+		});
+	</script>
 </body>
 
 </html>
